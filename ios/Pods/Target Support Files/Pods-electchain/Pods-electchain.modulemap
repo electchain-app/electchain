@@ -1,0 +1,6 @@
+module Pods_electchain {
+  umbrella header "Pods-electchain-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "323AEAA5A6AEF454A315A127EB8D4D9E"
-               BuildableName = "Pods-electchain.framework"
-               BlueprintName = "Pods-electchain"
+               BlueprintIdentifier = "9EB36719E43156D2408ECFBB8ACB32AF"
+               BuildableName = "Pods-electchainTests.framework"
+               BlueprintName = "Pods-electchainTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -22,8 +22,26 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
 import {WelcomeScreen} from './Welcome';
-import {IDInstructionsScreen} from './register/IDInstructions';
+
+// Import Registration Screens
+import {IDInstructionsScreen} from './registration/IDInstructions';
+import {VoterInfoScreen} from './registration/VoterInfo';
+import {RegisteredVoterApprovalScreen} from './registration/RegisteredVoterApproval';
+import {ScanIDScreen} from './registration/ScanID';
+import {LiveSelfieScreen} from './registration/LiveSelfie';
+import {IdentityApprovalScreen} from './registration/IdentityApproval';
+import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
+
+const InstructionText = (props) => {
+  return (
+    <View>
+      <Text>{props.header}</Text>
+      <Text>{props.details}</Text>
+    </View>
+  );
+}
 
 const App: () => React$Node = () => {
   
@@ -37,7 +55,16 @@ const App: () => React$Node = () => {
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+      
+      {/* Registration Screens */}
       <Stack.Screen name="IDInstructions" component={IDInstructionsScreen}/>
+      <Stack.Screen name="VoterInfo" component={VoterInfoScreen}/>
+      <Stack.Screen name="RegisteredVoterApproval" component={RegisteredVoterApprovalScreen}/>
+      <Stack.Screen name="ScanID" component={ScanIDScreen}/>
+      <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen}/>
+      <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen}/>
+      <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen}/>
+
     </Stack.Navigator>
   </NavigationContainer>
   );
@@ -46,4 +73,5 @@ const App: () => React$Node = () => {
 
 
 export default App;
+export {InstructionText};
 

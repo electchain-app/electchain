@@ -10,5 +10,6 @@ import config from './aws-exports'
 Amplify.configure(config)
 
 
+
 AppRegistry.registerComponent(appName, () => App);
 // AppRegistry.registerComponent(appName, () => IDInstructions);

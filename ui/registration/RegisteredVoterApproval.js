@@ -31,7 +31,13 @@ const RegisteredVoterApprovalScreen = ({navigation}) => {
               <ApprovedScreen header="registered" details="voter"/>
               <Button
                 title="Ready"
-                onPress={() => navigation.navigate('IDInstructions')}    
+                onPress={() => navigation.navigate('IDInstructions')}
+              />
+              {/*TODO: Temp button for segueing to Voting screens */}
+              <Text/>
+              <Button
+                  title="Vote"
+                  onPress={() => navigation.navigate('VoteInstruction')}
               />
           </View>
         </SafeAreaView>

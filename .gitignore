@@ -13,3 +13,12 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
+
+# Misc Files
+.idea/
+.coverage
+.DS_Store
+.vscode/
+__pycache__/
+android/.gradle/
+android/gradle/

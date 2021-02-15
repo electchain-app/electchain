@@ -34,6 +34,12 @@ import {LiveSelfieScreen} from './registration/LiveSelfie';
 import {IdentityApprovalScreen} from './registration/IdentityApproval';
 import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
 
+// Import Voting Screens
+import {VoteInstructionScreen} from './voting/VoteInstruction';
+import {CandidateScreen} from './voting/Candidates';
+import {ReviewSelectionScreen} from './voting/ReviewSelection';
+import {ConfirmationScreen} from './voting/Confirmation';
+
 const InstructionText = (props) => {
   return (
     <View>
@@ -44,18 +50,18 @@ const InstructionText = (props) => {
 }
 
 const App: () => React$Node = () => {
-  
+
   const [text, setText] = useState('');
   const [hidden, setHidden] = useState(true);
   const Stack = createStackNavigator();
-  
+
   return (
 
-  // Define all of the screens 
+  // Define all of the screens
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={WelcomeScreen}/>
-      
+
       {/* Registration Screens */}
       <Stack.Screen name="IDInstructions" component={IDInstructionsScreen}/>
       <Stack.Screen name="VoterInfo" component={VoterInfoScreen}/>
@@ -64,6 +70,12 @@ const App: () => React$Node = () => {
       <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen}/>
       <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen}/>
       <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen}/>
+
+      {/* Voting Screens */}
+      <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>
+      <Stack.Screen name="Candidates" component={CandidateScreen}/>
+      <Stack.Screen name="ReviewSelection" component={ReviewSelectionScreen}/>
+      <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>
 
     </Stack.Navigator>
   </NavigationContainer>

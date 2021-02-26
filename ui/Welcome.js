@@ -31,7 +31,7 @@ const WelcomeScreen = ({navigation}) => {
       <SafeAreaView style={pageStyles.sectionContainer}>
         {
           <View>
-            <Text>Ready to vote?</Text>
+            <Text style={textStyles.h1}>Ready to vote?</Text>
             <Button 
                 title="Begin"
                 onPress={() => navigation.navigate('IDInstructions')}    

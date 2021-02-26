@@ -11,7 +11,7 @@ import {
   Button
 } from 'react-native';
 
-import {InstructionText} from './../App.js'
+import {InstructionText} from '.././App.js'
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
 import {Checkbox} from 'react-native-elements'
 

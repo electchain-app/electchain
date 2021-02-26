@@ -1,5 +1,15 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  TextInput,
+  Button
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -17,9 +27,9 @@ import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
 
 // Import Voting Screens
 import {VoteInstructionScreen} from './voting/VoteInstruction';
-import {CandidateScreen} from './voting/Candidates';
-import {ReviewSelectionScreen} from './voting/ReviewSelection';
-import {ConfirmationScreen} from './voting/Confirmation';
+// import {CandidateScreen} from './voting/Candidates';
+// import {ReviewSelectionScreen} from './voting/ReviewSelection';
+// import {ConfirmationScreen} from './voting/Confirmation';
 
 const InstructionText = (props) => {
   return (
@@ -41,7 +51,7 @@ const App: () => React$Node = () => {
   // Define all of the screens
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Welcome">
-      <Stack.Screen name="Welcome" component={IDInstructionsScreen}/>
+      <Stack.Screen name="Welcome" component={WelcomeScreen}/>
 
       {/* Registration Screens */}
       <Stack.Screen name="IDInstructions" component={IDInstructionsScreen}/>
@@ -54,9 +64,9 @@ const App: () => React$Node = () => {
 
       {/* Voting Screens */}
       <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>
-      <Stack.Screen name="Candidates" component={CandidateScreen}/>
+      {/* <Stack.Screen name="Candidates" component={CandidateScreen}/>
       <Stack.Screen name="ReviewSelection" component={ReviewSelectionScreen}/>
-      <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>
+      <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>  */}
 
     </Stack.Navigator>
   </NavigationContainer>

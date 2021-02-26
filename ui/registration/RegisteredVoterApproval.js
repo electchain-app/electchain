@@ -13,7 +13,20 @@ import {
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
 import {InstructionText} from './../App.js';
 
+
+/* Screen for if they are a verified registered voter */
 const ApprovedScreen = (props) => {
+    return (
+        <View>
+            <InstructionText header={props.header}
+                    details={props.details} />
+            <Text>CHECKMARK HERE</Text>
+        </View>
+    );
+}
+
+/* Screen for if they are NOT a registered voter */
+const NotApprovedScreen = (props) => {
     return (
         <View>
             <InstructionText header={props.header}
@@ -30,8 +43,8 @@ const RegisteredVoterApprovalScreen = ({navigation}) => {
           <View>
               <ApprovedScreen header="registered" details="voter"/>
               <Button
-                title="Ready"
-                onPress={() => navigation.navigate('IDInstructions')}
+                title="Continue"
+                onPress={() => navigation.navigate('ScanID')}
               />
               {/*TODO: Temp button for segueing to Voting screens */}
               <Text/>

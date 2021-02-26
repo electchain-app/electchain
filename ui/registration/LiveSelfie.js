@@ -11,17 +11,19 @@ import {
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
+import {InstructionText} from './../App.js';
 
 const LiveSelfieScreen = ({navigation}) => {
     return(
         <SafeAreaView style={pageStyles.sectionContainer}>
           <View>
-              <Text>please have the following item ready:</Text>
-              <Text>a government-issued ID</Text>
-              <Text>(driver’s license, state ID, or passport)</Text>
+              <InstructionText
+                header="record"
+                details="a video of yourself smiling and holding up a peace sign"
+              />
               <Button
-                title="Ready"
-                onPress={() => navigation.navigate('IDInstructions')}    
+                title="Record"
+                onPress={() => navigation.navigate('IdentityApproval')}    
               />
           </View>
         </SafeAreaView>

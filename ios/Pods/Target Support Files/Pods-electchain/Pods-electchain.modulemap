@@ -1,4 +1,4 @@
-framework module Pods_electchain {
+module Pods_electchain {
   umbrella header "Pods-electchain-umbrella.h"
 
   export *

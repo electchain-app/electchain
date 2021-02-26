@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "323AEAA5A6AEF454A315A127EB8D4D9E"
-               BuildableName = "Pods-electchain.framework"
+               BuildableName = "libPods-electchain.a"
                BlueprintName = "Pods-electchain"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

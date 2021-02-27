@@ -57,4 +57,4 @@ const RegisteredVoterApprovalScreen = ({navigation}) => {
     )
 }
 
-export {RegisteredVoterApprovalScreen, ApprovedScreen};
+export {RegisteredVoterApprovalScreen, ApprovedScreen, NotApprovedScreen};

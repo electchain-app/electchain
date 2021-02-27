@@ -46,14 +46,35 @@ const pageStyles = StyleSheet.create({
 });
 
 const textStyles = StyleSheet.create({
-    h1: {
+    header: {
         color: Colors.black,
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+    h1: {
+      color: Colors.black,
+    },
+    button: {
+      color: Colors.white, 
+      padding: 10,
+    },
+    centered: {
+      textAlign: 'center',
+      color: Colors.black,
+      paddingBottom: 20,
+      fontSize: 16,
     }
 })
 
 const buttonStyles = StyleSheet.create({
-    h1: {
-        color: Colors.black,
+    red_button: {
+        backgroundColor: '#FF5D5B',
+        borderRadius: 25,
+        alignItems: 'center',
+        // paddingTop: 10,
+        // paddingBottom: 10,
+        marginLeft: 100, 
+        marginRight: 100,
     }
 })
 

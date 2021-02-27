@@ -16,11 +16,15 @@ import {
   Text,
   StatusBar,
   TextInput,
-  Button
+  Button,
+  TouchableOpacity,
 } from 'react-native';
+import {
+  Colors,
+} from 'react-native/Libraries/NewAppScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
-import {pageStyles, textStyles} from './styles.js';
+import {pageStyles, textStyles, buttonStyles} from './styles.js';
 
 // const Welcome: () => React$Node = () => {
 const WelcomeScreen = ({navigation}) => {
@@ -31,11 +35,12 @@ const WelcomeScreen = ({navigation}) => {
       <SafeAreaView style={pageStyles.sectionContainer}>
         {
           <View>
-            <Text style={textStyles.h1}>Ready to vote?</Text>
-            <Button 
-                title="Begin"
-                onPress={() => navigation.navigate('IDInstructions')}    
-            />
+            <Text style={textStyles.centered}>Ready to vote?</Text>
+            <TouchableOpacity 
+                style={buttonStyles.red_button}
+                onPress={() => navigation.navigate('IDInstructions')}>
+                <Text style={textStyles.button}>Begin</Text>
+            </TouchableOpacity>
           </View>
           
         }

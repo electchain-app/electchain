@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import {pageStyles, textStyles, buttonStyles} from './styles.js';
 
 import {WelcomeScreen} from './Welcome';
 
@@ -34,7 +34,7 @@ import {VoteInstructionScreen} from './voting/VoteInstruction';
 const InstructionText = (props) => {
   return (
     <View>
-      <Text>{props.header}</Text>
+      <Text style={textStyles.header}>{props.header}</Text>
       <Text>{props.details}</Text>
     </View>
   );

@@ -18,6 +18,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
+  Image
 } from 'react-native';
 import {
   Colors,
@@ -32,15 +33,22 @@ const WelcomeScreen = ({navigation}) => {
   const [hidden, setHidden] = useState(true);
   
   return (
-      <SafeAreaView style={pageStyles.sectionContainer}>
+      <SafeAreaView >
         {
           <View>
-            <Text style={textStyles.centered}>Ready to vote?</Text>
-            <TouchableOpacity 
-                style={buttonStyles.red_button}
-                onPress={() => navigation.navigate('IDInstructions')}>
-                <Text style={textStyles.button}>Begin</Text>
-            </TouchableOpacity>
+            <View>
+              <Image source={require('./assets/images/welcome-screen.png')} style={{marginTop: -100, width: 400, height: 500}}/>
+            </View>
+            <View style={pageStyles.sectionContainer}>
+              <Text style={[textStyles.header, {textAlign:'center'}]}>elect</Text>
+              <Text style={[textStyles.details, {textAlign:'center', fontSize: 35}]}>chain</Text>
+              <Text style={textStyles.centered}>Ready to vote?</Text>
+              <TouchableOpacity 
+                  style={buttonStyles.red_button}
+                  onPress={() => navigation.navigate('IDInstructions')}>
+                  <Text style={textStyles.button}>Begin</Text>
+              </TouchableOpacity>
+            </View>
           </View>
           
         }

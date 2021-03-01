@@ -33,10 +33,19 @@ import {VoteInstructionScreen} from './voting/VoteInstruction';
 
 const InstructionText = (props) => {
   return (
-    <View>
+    <View style={{marginBottom: 20}}>
       <Text style={textStyles.header}>{props.header}</Text>
-      <Text>{props.details}</Text>
-    </View>
+      <Text style={textStyles.details}>{props.details}</Text>
+    </View> 
+  );
+}
+
+const CenteredInstructionText = (props) => {
+  return (
+    <View style={{marginBottom: 10, marginTop: 20, textAlign: 'center'}}>
+      <Text style={[textStyles.header, {textAlign: 'center'}]}>{props.header}</Text>
+      <Text style={[textStyles.details, {textAlign: 'center'}]}>{props.details}</Text>
+    </View> 
   );
 }
 
@@ -49,6 +58,7 @@ const App: () => React$Node = () => {
   return (
 
   // Define all of the screens
+
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={WelcomeScreen}/>
@@ -76,5 +86,5 @@ const App: () => React$Node = () => {
 
 
 export default App;
-export {InstructionText};
+export {InstructionText, CenteredInstructionText};
 

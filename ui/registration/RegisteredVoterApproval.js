@@ -7,20 +7,27 @@ import {
   Text,
   StatusBar,
   TextInput,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
+import {Icon} from 'react-native-elements';
 
-import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
-import {InstructionText} from './../App.js';
+import {pageStyles, textStyles, buttonStyles, shapes} from '.././styles.js';
+import {InstructionText, CenteredInstructionText} from './../App.js';
 
 
 /* Screen for if they are a verified registered voter */
 const ApprovedScreen = (props) => {
     return (
         <View>
-            <InstructionText header={props.header}
-                    details={props.details} />
-            <Text>CHECKMARK HERE</Text>
+            <CenteredInstructionText header={props.header} details={props.details}/>
+            <View style={shapes.CircleShape}></View>
+            <Icon
+                name='checkmark-circle-outline'
+                type='ionicon'
+                color='#0064FF' 
+                iconSize='50'
+            /> 
         </View>
     );
 }
@@ -42,16 +49,17 @@ const RegisteredVoterApprovalScreen = ({navigation}) => {
         <SafeAreaView style={pageStyles.sectionContainer}>
           <View>
               <ApprovedScreen header="registered" details="voter"/>
-              <Button
-                title="Continue"
-                onPress={() => navigation.navigate('ScanID')}
-              />
+                <TouchableOpacity 
+                    style={buttonStyles.red_button}
+                    onPress={() => navigation.navigate('ScanID')}>
+                    <Text style={textStyles.button}>Continue</Text>
+                </TouchableOpacity>
               {/*TODO: Temp button for segueing to Voting screens */}
-              <Text/>
+              {/* <Text/>
               <Button
                   title="Vote"
                   onPress={() => navigation.navigate('VoteInstruction')}
-              />
+              /> */}
           </View>
         </SafeAreaView>
     )

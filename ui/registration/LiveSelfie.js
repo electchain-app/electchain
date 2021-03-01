@@ -7,7 +7,8 @@ import {
   Text,
   StatusBar,
   TextInput,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
@@ -21,10 +22,11 @@ const LiveSelfieScreen = ({navigation}) => {
                 header="record"
                 details="a video of yourself smiling and holding up a peace sign"
               />
-              <Button
-                title="Record"
-                onPress={() => navigation.navigate('IdentityApproval')}    
-              />
+              <TouchableOpacity 
+                style={buttonStyles.red_button}
+                onPress={() => navigation.navigate('IdentityApproval')}>
+                <Text style={textStyles.button}>Record</Text>
+              </TouchableOpacity>
           </View>
         </SafeAreaView>
     )

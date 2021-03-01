@@ -8,11 +8,7 @@ import {
 
 const pageStyles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
+    backgroundColor: Colors.white,
   },
   body: {
     backgroundColor: Colors.white,
@@ -21,61 +17,74 @@ const pageStyles = StyleSheet.create({
     marginTop: 32,
     paddingHorizontal: 24,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
 });
 
 const textStyles = StyleSheet.create({
-    header: {
-        color: Colors.black,
-        fontWeight: 'bold',
-        fontSize: 20,
-    },
-    h1: {
-      color: Colors.black,
-    },
-    button: {
-      color: Colors.white, 
-      padding: 10,
-    },
-    centered: {
-      textAlign: 'center',
-      color: Colors.black,
-      paddingBottom: 20,
-      fontSize: 16,
-    }
+  header: {
+    color: Colors.black,
+    fontSize: 36,
+    fontFamily: 'Barlow-Bold'
+  },
+  details: {
+    color: Colors.black,
+    fontSize: 25,
+    fontFamily: 'Barlow-Regular'
+  },
+  h1: {
+    color: Colors.black,
+  },
+  button: {
+    color: Colors.white, 
+    padding: 10,
+  },
+  fieldInput: {
+    color: Colors.black,
+    fontFamily: 'Inter-Light',
+    fontSize: 16,
+    borderBottomWidth: 1.0,
+  },
+  fieldLabel: {
+    color: Colors.black,
+    fontFamily: 'Inter-Light',
+    fontSize: 16,
+  },
+  checkbox: {
+    color: Colors.black,
+    fontFamily: 'Barlow-Regular',
+    fontSize: 16,
+    marginTop: 20,
+  },
+  centered: {
+    textAlign: 'center',
+    color: Colors.black,
+    paddingBottom: 20,
+    fontSize: 16,
+  }
 })
 
 const buttonStyles = StyleSheet.create({
-    red_button: {
-        backgroundColor: '#FF5D5B',
-        borderRadius: 25,
-        alignItems: 'center',
-        // paddingTop: 10,
-        // paddingBottom: 10,
-        marginLeft: 100, 
-        marginRight: 100,
-    }
+  red_button: {
+    backgroundColor: '#FF5D5B',
+    borderRadius: 25,
+    alignItems: 'center',
+    marginLeft: 100, 
+    marginRight: 100,
+    marginTop: 30
+  }
 })
 
-export {pageStyles, textStyles, buttonStyles};
+const shapes = StyleSheet.create({
+  CircleShape: {
+    marginVertical: 50,
+    marginHorizontal: 50,
+    width: 250,
+    height: 250,
+    borderRadius: 250 / 2,
+    borderStyle: 'solid',
+    borderColor: '#0064FF',
+    borderWidth: 5,
+    // backgroundColor: '#0064FF',
+}
+})
+
+export {pageStyles, textStyles, buttonStyles, shapes};

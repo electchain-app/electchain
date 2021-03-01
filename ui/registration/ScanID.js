@@ -7,7 +7,8 @@ import {
   Text,
   StatusBar,
   TextInput,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
@@ -21,10 +22,11 @@ const ScanIDScreen = ({navigation}) => {
                 header="scan"
                 details="your driver's license"
               />
-              <Button
-                title="Scan"
-                onPress={() => navigation.navigate('LiveSelfie')}    
-              />
+              <TouchableOpacity 
+                style={buttonStyles.red_button}
+                onPress={() => navigation.navigate('LiveSelfie')}>
+                <Text style={textStyles.button}>Scan</Text>
+              </TouchableOpacity>
           </View>
         </SafeAreaView>
     )

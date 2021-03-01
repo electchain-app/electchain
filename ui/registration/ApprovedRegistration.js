@@ -7,7 +7,8 @@ import {
   Text,
   StatusBar,
   TextInput,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
@@ -18,13 +19,15 @@ const ApprovedRegistrationScreen = ({navigation}) => {
         <SafeAreaView style={pageStyles.sectionContainer}>
           <View>
               <InstructionText
+                style={{alignItems: 'center'}}
                 header="congrats"
                 details="you're ready to vote!"
               />
-              <Button
-                title="Finish"
-                onPress={() => navigation.navigate('VoteInstruction')}    
-              />
+              <TouchableOpacity 
+                style={buttonStyles.red_button}
+                onPress={() => navigation.navigate('VoteInstruction')}>
+                <Text style={textStyles.button}>Finish</Text>
+              </TouchableOpacity>
           </View>
         </SafeAreaView>
     )

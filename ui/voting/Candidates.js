@@ -1,36 +1,38 @@
 import React, {useState, useEffect} from 'react';
 import {
     SafeAreaView,
-    StyleSheet,
-    ScrollView,
     View,
     Text,
-    StatusBar,
-    TextInput,
-    Button
+    TouchableOpacity
 } from 'react-native';
 import { CheckBox } from 'react-native-elements';
-import MultipleChoice from "react-native-multiple-choice-picker";
-import {pageStyles, textStyles, buttonStyles} from '../styles';
+// import MultipleChoice from "react-native-multiple-choice-picker";
+import {selectPageStyles, textStyles, buttonStyles} from '../styles';
+import {SelectInstructionText} from '../App';
 
 const CandidateScreen = ({navigation}) => {
-    const [candidate, setCandidate] = useState([]);
     return(
-        <SafeAreaView style={pageStyles.sectionContainer}>
+        <>
+        <SafeAreaView style={selectPageStyles.sectionContainer}>
             <View>
-                <Text>president</Text>
-                <Text>of the United States</Text>
-                <MultipleChoice
-                    direction={'column'}
-                    choices={['Joseph R. Biden (D)', 'Donald J. Trump (R)', 'Howie Hawkins (G)', 'Jo Jergensen (L)']}
-                    onPress={() => console.log(this.data)}
+                <SelectInstructionText
+                    header="president"
+                    details="of the United States"
                 />
-                <Button
-                    title="Next"
-                    onPress={() => navigation.navigate('ReviewSelection', {candidate: candidate})}
-                />
+                {/*<MultipleChoice*/}
+                {/*    direction={'column'}*/}
+                {/*    choices={['Joseph R. Biden (D)', 'Donald J. Trump (R)', 'Howie Hawkins (G)', 'Jo Jergensen (L)']}*/}
+                {/*    // onPress={() => console.log(this.data)}*/}
+                {/*/>*/}
+                <TouchableOpacity
+                    style={buttonStyles.blue_button}
+                    onPress={() => navigation.navigate('ReviewSelection')}>
+                    <Text style={textStyles.button}>Next</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
+        <SafeAreaView style={selectPageStyles.body}/>
+        </>
     )
 }
 

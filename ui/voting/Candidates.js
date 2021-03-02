@@ -5,6 +5,7 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
+import SyncStorage from 'sync-storage';
 import {selectPageStyles, textStyles, buttonStyles} from '../styles';
 import {SelectInstructionText} from '../App';
 
@@ -32,9 +33,7 @@ export default class CandidateScreen extends Component {
     selectionHandler = (idx) => {
         let selected = false;
         const {presidentialCandidates} = this.state;
-        console.log('hmm:', presidentialCandidates);
         let choices = presidentialCandidates.map((item, index) => {
-            console.log(idx, index);
             if (idx === index) {
                 item.isSelected = !item.isSelected;
                 selected = item.isSelected;
@@ -46,6 +45,9 @@ export default class CandidateScreen extends Component {
             for (let i = 0; i < choices.length; i++) {
                 if (i !== idx) {
                     choices[i]['isSelected'] = false;
+                }
+                else {
+                    SyncStorage.set('presidentChoice', choices[i]['name']);
                 }
             }
         }

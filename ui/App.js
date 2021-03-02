@@ -21,7 +21,7 @@ import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
 
 // Import Voting Screens
 import {VoteInstructionScreen} from './voting/VoteInstruction';
-import {CandidateScreen} from './voting/Candidates';
+import CandidateScreen from './voting/Candidates';
 import {ReviewSelectionScreen} from './voting/ReviewSelection';
 import {ConfirmationScreen} from './voting/Confirmation';
 

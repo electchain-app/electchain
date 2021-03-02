@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-  TextInput,
-  Button,
   TouchableOpacity
 } from 'react-native';
 import {Icon} from 'react-native-elements';
@@ -25,9 +20,9 @@ const ApprovedScreen = (props) => {
             <Icon
                 name='checkmark-circle-outline'
                 type='ionicon'
-                color='#0064FF' 
+                color='#0064FF'
                 iconSize='50'
-            /> 
+            />
         </View>
     );
 }
@@ -43,23 +38,16 @@ const NotApprovedScreen = (props) => {
     );
 }
 
-
 const RegisteredVoterApprovalScreen = ({navigation}) => {
     return(
         <SafeAreaView style={pageStyles.sectionContainer}>
           <View>
               <ApprovedScreen header="registered" details="voter"/>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={buttonStyles.red_button}
                     onPress={() => navigation.navigate('ScanID')}>
                     <Text style={textStyles.button}>Continue</Text>
                 </TouchableOpacity>
-              {/*TODO: Temp button for segueing to Voting screens */}
-              {/* <Text/>
-              <Button
-                  title="Vote"
-                  onPress={() => navigation.navigate('VoteInstruction')}
-              /> */}
           </View>
         </SafeAreaView>
     )

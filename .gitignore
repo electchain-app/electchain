@@ -20,5 +20,6 @@ amplifytools.xcconfig
 .DS_Store
 .vscode/
 __pycache__/
-android/.gradle/
-android/gradle/
+android/
+ios/
+node_modules/

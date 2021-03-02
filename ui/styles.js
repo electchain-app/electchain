@@ -1,10 +1,11 @@
 import {
-  StyleSheet,
+  StyleSheet
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+import React from "react";
 
 const pageStyles = StyleSheet.create({
   scrollView: {
@@ -17,6 +18,18 @@ const pageStyles = StyleSheet.create({
     marginTop: 32,
     paddingHorizontal: 24,
   },
+});
+
+const selectPageStyles = StyleSheet.create({
+  body: {
+    backgroundColor: '#FFA2A0',
+    flex: 1
+  },
+  sectionContainer: {
+    paddingVertical: 32,
+    paddingHorizontal: 24,
+    backgroundColor: '#FFA2A0',
+  }
 });
 
 const textStyles = StyleSheet.create({
@@ -34,7 +47,7 @@ const textStyles = StyleSheet.create({
     color: Colors.black,
   },
   button: {
-    color: Colors.white, 
+    color: Colors.white,
     padding: 10,
   },
   fieldInput: {
@@ -62,13 +75,34 @@ const textStyles = StyleSheet.create({
   }
 })
 
+const selectTextStyles = StyleSheet.create({
+  header: {
+    color: '#FF0400',
+    fontSize: 36,
+    fontFamily: 'Barlow-Bold'
+  },
+  details: {
+    color: Colors.white,
+    fontSize: 25,
+    fontFamily: 'Barlow-Regular'
+  }
+})
+
 const buttonStyles = StyleSheet.create({
   red_button: {
     backgroundColor: '#FF5D5B',
     borderRadius: 25,
     alignItems: 'center',
-    marginLeft: 100, 
+    marginLeft: 100,
     marginRight: 100,
+    marginTop: 30
+  },
+  blue_button: {
+    backgroundColor: '#8CB9FF',
+    borderRadius: 25,
+    alignItems: 'center',
+    marginLeft: 150,
+    marginRight: 150,
     marginTop: 30
   }
 })
@@ -84,7 +118,7 @@ const shapes = StyleSheet.create({
     borderColor: '#0064FF',
     borderWidth: 5,
     // backgroundColor: '#0064FF',
-}
+    }
 })
 
-export {pageStyles, textStyles, buttonStyles, shapes};
+export {pageStyles, selectPageStyles, textStyles, selectTextStyles, buttonStyles, shapes};

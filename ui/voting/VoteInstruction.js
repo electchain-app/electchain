@@ -1,28 +1,27 @@
 import React, {useState} from 'react';
 import {
     SafeAreaView,
-    StyleSheet,
-    ScrollView,
     View,
     Text,
-    StatusBar,
-    TextInput,
-    Button
+    TouchableOpacity
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '../styles';
+import {InstructionText} from "../App";
 
 const VoteInstructionScreen = ({navigation}) => {
     return(
         <SafeAreaView style={pageStyles.sectionContainer}>
             <View>
-                <Text>vote</Text>
-                <Text>for the following</Text>
-                <Text>candidates</Text>
-                <Button
-                    title="Start"
-                    onPress={() => navigation.navigate('Candidates')}
+                <InstructionText
+                    header="vote"
+                    details="for the following candidates"
                 />
+                <TouchableOpacity
+                    style={buttonStyles.red_button}
+                    onPress={() => navigation.navigate('Candidates')}>
+                    <Text style={textStyles.button}>Start</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )

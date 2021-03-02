@@ -22,3 +22,4 @@ amplifytools.xcconfig
 __pycache__/
 android/
 ios/
+node_modules/

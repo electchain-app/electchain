@@ -21,9 +21,13 @@ const ReviewSelectionScreen = ({navigation}) => {
                     header="President"
                     details={SyncStorage.get('presidentChoice')}
                 />
+                <InstructionText
+                    header="Senator"
+                    details={SyncStorage.get('senatorChoice')}
+                />
                 <TouchableOpacity
                     style={buttonStyles.red_button}
-                    onPress={() => navigation.navigate('Candidates')}>
+                    onPress={() => navigation.navigate('PresidentialCandidates')}>
                     <Text style={textStyles.button}>Make Changes</Text>
                 </TouchableOpacity>
                 <TouchableOpacity

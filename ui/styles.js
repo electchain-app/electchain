@@ -85,6 +85,10 @@ const selectTextStyles = StyleSheet.create({
     color: Colors.white,
     fontSize: 25,
     fontFamily: 'Barlow-Regular'
+  },
+  button: {
+    opacity: 0,
+    height: 0
   }
 })
 
@@ -104,6 +108,10 @@ const buttonStyles = StyleSheet.create({
     marginLeft: 150,
     marginRight: 150,
     marginTop: 30
+  },
+  hidden: {
+    opacity: 0,
+    height: 0
   }
 })
 

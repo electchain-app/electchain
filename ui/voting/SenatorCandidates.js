@@ -27,7 +27,7 @@ export default class SenatorCandidateScreen extends Component {
             item.isSelected = false
             return {...item};
         });
-        this.setState({senatorData : choices});
+        this.setState({senatorCandidates : choices});
         console.log('Choices: ', choices);
     }
 

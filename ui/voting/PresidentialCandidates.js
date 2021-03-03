@@ -27,7 +27,7 @@ export default class PresidentialCandidateScreen extends Component {
             item.isSelected = false
             return {...item};
         });
-        this.setState({presidentialData : choices});
+        this.setState({presidentialCandidates : choices});
         console.log('Choices: ', choices);
     }
 

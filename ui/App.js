@@ -21,7 +21,8 @@ import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
 
 // Import Voting Screens
 import {VoteInstructionScreen} from './voting/VoteInstruction';
-import CandidateScreen from './voting/Candidates';
+import PresidentialCandidateScreen from './voting/PresidentialCandidates';
+import SenatorCandidateScreen from './voting/SenatorCandidates';
 import {ReviewSelectionScreen} from './voting/ReviewSelection';
 import {ConfirmationScreen} from './voting/Confirmation';
 
@@ -77,7 +78,8 @@ const App: () => React$Node = () => {
 
       {/* Voting Screens */}
       <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>
-      <Stack.Screen name="Candidates" component={CandidateScreen}/>
+      <Stack.Screen name="PresidentialCandidates" component={PresidentialCandidateScreen}/>
+      <Stack.Screen name="SenatorCandidates" component={SenatorCandidateScreen}/>
       <Stack.Screen name="ReviewSelection" component={ReviewSelectionScreen}/>
       <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>
 

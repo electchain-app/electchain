@@ -19,7 +19,7 @@ const VoteInstructionScreen = ({navigation}) => {
                 />
                 <TouchableOpacity
                     style={buttonStyles.red_button}
-                    onPress={() => navigation.navigate('Candidates')}>
+                    onPress={() => navigation.navigate('PresidentialCandidates')}>
                     <Text style={textStyles.button}>Start</Text>
                 </TouchableOpacity>
             </View>

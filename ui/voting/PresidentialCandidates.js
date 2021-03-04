@@ -6,10 +6,10 @@ import {
     TouchableOpacity
 } from 'react-native';
 import SyncStorage from 'sync-storage';
-import {selectPageStyles, textStyles, buttonStyles} from '../styles';
+import {selectPageStyles, textStyles, selectTextStyles, buttonStyles} from '../styles';
 import {SelectInstructionText} from '../App';
 
-export default class CandidateScreen extends Component {
+export default class PresidentialCandidateScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,8 @@ export default class CandidateScreen extends Component {
                 {name: 'Biden'},
                 {name: 'Trump'},
                 {name: 'Tej Anand'}
-            ]
+            ],
+            candidateSelected: false
         };
     }
 
@@ -26,28 +27,25 @@ export default class CandidateScreen extends Component {
             item.isSelected = false
             return {...item};
         });
-        this.setState({presidentialData : choices});
+        this.setState({presidentialCandidates : choices});
         console.log('Choices: ', choices);
     }
 
     selectionHandler = (idx) => {
-        let selected = false;
-        const {presidentialCandidates} = this.state;
+        const {presidentialCandidates, candidateSelected} = this.state;
         let choices = presidentialCandidates.map((item, index) => {
             if (idx === index) {
                 item.isSelected = !item.isSelected;
-                selected = item.isSelected;
+                this.setState({candidateSelected: item.isSelected})
+                SyncStorage.set('presidentChoice', item.name);
             }
             return {...item};
         });
         console.log('Candidate State: ', choices);
-        if (selected) {
+        if (candidateSelected) {
             for (let i = 0; i < choices.length; i++) {
                 if (i !== idx) {
                     choices[i]['isSelected'] = false;
-                }
-                else {
-                    SyncStorage.set('presidentChoice', choices[i]['name']);
                 }
             }
         }
@@ -55,7 +53,7 @@ export default class CandidateScreen extends Component {
     }
 
     render() {
-        const {presidentialCandidates} = this.state;
+        const {presidentialCandidates, candidateSelected} = this.state;
         return(
             <>
                 <SafeAreaView style={selectPageStyles.sectionContainer}>
@@ -88,9 +86,10 @@ export default class CandidateScreen extends Component {
                             })
                         }
                         <TouchableOpacity
-                            style={buttonStyles.blue_button}
-                            onPress={() => this.props.navigation.navigate('ReviewSelection')}>
-                            <Text style={textStyles.button}>Next</Text>
+                            style={candidateSelected ? buttonStyles.blue_button : buttonStyles.hidden}
+                            onPress={() => this.props.navigation.navigate('SenatorCandidates')}
+                            disabled={!candidateSelected}>
+                            <Text style={candidateSelected ? textStyles.button : selectTextStyles.button}>Next</Text>
                         </TouchableOpacity>
                     </View>
                 </SafeAreaView>

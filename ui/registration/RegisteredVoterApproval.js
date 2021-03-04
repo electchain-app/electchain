@@ -17,12 +17,12 @@ const ApprovedScreen = (props) => {
         <View>
             <CenteredInstructionText header={props.header} details={props.details}/>
             <View style={shapes.CircleShape}></View>
-            <Icon
+            {/* <Icon
                 name='checkmark-circle-outline'
                 type='ionicon'
                 color='#0064FF'
                 iconSize='50'
-            />
+            /> */}
         </View>
     );
 }

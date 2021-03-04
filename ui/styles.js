@@ -1,11 +1,14 @@
 import {
-  StyleSheet
+  StyleSheet,
+  Platform,
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import React from "react";
+
+var ios = Platform.OS === 'ios';
 
 const pageStyles = StyleSheet.create({
   scrollView: {
@@ -50,22 +53,27 @@ const textStyles = StyleSheet.create({
     color: Colors.white,
     padding: 10,
   },
+  field: {
+  },
   fieldInput: {
     color: Colors.black,
     fontFamily: 'Inter-Light',
     fontSize: 16,
     borderBottomWidth: 1.0,
+    paddingVertical: ios ? 5 : 0,
   },
   fieldLabel: {
     color: Colors.black,
     fontFamily: 'Inter-Light',
     fontSize: 16,
+    marginBottom: ios ? 20 : 0,
+    marginTop: ios ? 5 : 0,
   },
   checkbox: {
     color: Colors.black,
     fontFamily: 'Barlow-Regular',
     fontSize: 16,
-    marginTop: 20,
+    padding: 10,
   },
   centered: {
     textAlign: 'center',

@@ -31,7 +31,7 @@ import {pageStyles, textStyles, buttonStyles} from './styles.js';
 const WelcomeScreen = ({navigation}) => {
   const [text, setText] = useState('');
   const [hidden, setHidden] = useState(true);
-  
+
   return (
       <SafeAreaView >
         {
@@ -43,14 +43,21 @@ const WelcomeScreen = ({navigation}) => {
               <Text style={[textStyles.header, {textAlign:'center'}]}>elect</Text>
               <Text style={[textStyles.details, {textAlign:'center', fontSize: 35}]}>chain</Text>
               <Text style={textStyles.centered}>Ready to vote?</Text>
-              <TouchableOpacity 
+              <TouchableOpacity
                   style={buttonStyles.red_button}
                   onPress={() => navigation.navigate('IDInstructions')}>
                   <Text style={textStyles.button}>Begin</Text>
               </TouchableOpacity>
+
+              {/* TODO: temp for skipping registration screens */}
+              <TouchableOpacity
+                  style={buttonStyles.red_button}
+                  onPress={() => navigation.navigate('VoteInstruction')}>
+                <Text style={textStyles.button}>Skip to Vote Screens</Text>
+              </TouchableOpacity>
             </View>
           </View>
-          
+
         }
       </SafeAreaView>
   );

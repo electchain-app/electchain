@@ -32,7 +32,7 @@ const ReviewSelectionScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={buttonStyles.red_button}
-                    onPress={sendToBlockchain(navigation)}>
+                    onPress={() => {sendToBlockchain(); navigation.navigate('Confirmation');}}>
                     <Text style={textStyles.button}>Submit</Text>
                 </TouchableOpacity>
             </View>
@@ -40,11 +40,10 @@ const ReviewSelectionScreen = ({navigation}) => {
     )
 }
 
-const sendToBlockchain = (navigation) => {
+const sendToBlockchain = () => {
     console.log('Enter sendBlockChain');
     console.log('President Choice: ' + SyncStorage.get('presidentChoice'));
     console.log('President Choice: ' + SyncStorage.get('senatorChoice'));
-    navigation.navigate('Confirmation');
 }
 
 export {ReviewSelectionScreen};

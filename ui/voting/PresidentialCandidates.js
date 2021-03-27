@@ -68,17 +68,7 @@ export default class PresidentialCandidateScreen extends Component {
                                     // TODO: improve CSS
                                     <TouchableOpacity
                                         onPress={() => this.selectionHandler(index)}
-                                        style={{
-                                            marginTop: 20,
-                                            height: 50,
-                                            width: '80%',
-                                            borderRadius: 42,
-                                            backgroundColor: 'green',
-                                            justifyContent: 'space-between',
-                                            flexDirection: 'row',
-                                            paddingHorizontal: 25,
-                                            alignItems: 'center'
-                                        }}>
+                                        style={selectPageStyles.choiceContainer}>
                                         <Text>{item.name}</Text>
                                         <Text>{item.isSelected ? 'selected': 'not selected'}</Text>
                                     </TouchableOpacity>
@@ -86,7 +76,7 @@ export default class PresidentialCandidateScreen extends Component {
                             })
                         }
                         <TouchableOpacity
-                            style={candidateSelected ? buttonStyles.blue_button : buttonStyles.hidden}
+                            style={candidateSelected ? buttonStyles.next_blue_button_2 : buttonStyles.hidden}
                             onPress={() => this.props.navigation.navigate('SenatorCandidates')}
                             disabled={!candidateSelected}>
                             <Text style={candidateSelected ? textStyles.button : selectTextStyles.button}>Next</Text>

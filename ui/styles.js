@@ -32,6 +32,21 @@ const selectPageStyles = StyleSheet.create({
     paddingVertical: 32,
     paddingHorizontal: 24,
     backgroundColor: '#FFA2A0',
+  },
+  buttonContainer: {
+    paddingHorizontal: 24,
+    backgroundColor: '#FFA2A0',
+    flexDirection: 'row'
+  },
+  choiceContainer: {
+    marginTop: 30,
+    height: 50,
+    borderRadius: 42,
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingHorizontal: 25,
+    alignItems: 'center'
   }
 });
 
@@ -97,7 +112,7 @@ const selectTextStyles = StyleSheet.create({
   button: {
     opacity: 0,
     height: 0
-  }
+  },
 })
 
 const buttonStyles = StyleSheet.create({
@@ -109,13 +124,32 @@ const buttonStyles = StyleSheet.create({
     marginRight: 100,
     marginTop: 30
   },
-  blue_button: {
+  next_blue_button: {
     backgroundColor: '#8CB9FF',
     borderRadius: 25,
-    alignItems: 'center',
-    marginLeft: 150,
-    marginRight: 150,
+    marginLeft: 190,
+    marginRight: 0,
     marginTop: 30
+  },
+  next_blue_button_2: {
+    backgroundColor: '#8CB9FF',
+    alignItems: 'center',
+    marginLeft: 300,
+    marginRight: 0,
+    marginTop: 30,
+    borderRadius: 25
+
+  },
+  prev_blue_button: {
+    backgroundColor: '#8CB9FF',
+    borderRadius: 25,
+    marginTop: 30
+  },
+  text: {
+    color: Colors.white,
+    width: 80,
+    padding: 10,
+    marginLeft: 15,
   },
   hidden: {
     opacity: 0,

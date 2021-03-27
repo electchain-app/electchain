@@ -68,33 +68,25 @@ export default class SenatorCandidateScreen extends Component {
                                     // TODO: improve CSS
                                     <TouchableOpacity
                                         onPress={() => this.selectionHandler(index)}
-                                        style={{
-                                            marginTop: 20,
-                                            height: 50,
-                                            width: '80%',
-                                            borderRadius: 42,
-                                            backgroundColor: 'green',
-                                            justifyContent: 'space-between',
-                                            flexDirection: 'row',
-                                            paddingHorizontal: 25,
-                                            alignItems: 'center'
-                                        }}>
+                                        style={selectPageStyles.choiceContainer}>
                                         <Text>{item.name}</Text>
                                         <Text>{item.isSelected ? 'selected': 'not selected'}</Text>
                                     </TouchableOpacity>
                                 );
                             })
                         }
+                    </View>
+                    <View style={{flexDirection: 'row', }}>
                         <TouchableOpacity
-                            style={buttonStyles.blue_button}
+                            style={buttonStyles.prev_blue_button}
                             onPress={() => this.props.navigation.navigate('PresidentialCandidates')}>
-                            <Text style={textStyles.button}>Prev</Text>
+                            <Text style={buttonStyles.text}>Prev</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            style={candidateSelected ? buttonStyles.blue_button : buttonStyles.hidden}
+                            style={candidateSelected ? buttonStyles.next_blue_button : buttonStyles.hidden}
                             onPress={() => this.props.navigation.navigate('ReviewSelection')}
                             disabled={!candidateSelected}>
-                            <Text style={candidateSelected ? textStyles.button : selectTextStyles.button}>Next</Text>
+                            <Text style={candidateSelected ? buttonStyles.text : selectTextStyles.button}>Next</Text>
                         </TouchableOpacity>
                     </View>
                 </SafeAreaView>

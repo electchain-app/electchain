@@ -11,11 +11,18 @@ import {
   Button,
   TouchableOpacity
 } from 'react-native';
-import SyncStorage from 'sync-storage';
 import {InstructionText} from '.././App.js'
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
 import CheckBox from '@react-native-community/checkbox';
 
+const VOTER_INFO = {
+    "firstName": "",
+    "lastName": "", 
+    "birthday": "",
+    "zipcode": "", 
+    "tdlNum": "",
+    "vuidNum": "",
+};
 
 const Field = (props) => {
 
@@ -26,23 +33,12 @@ const Field = (props) => {
             <TextInput style={textStyles.fieldInput} placeholder={props.placeholder}
                 onChangeText={input => {
                     setInput(input);
-                    setFieldInput(props.name, input);
+                    VOTER_INFO[props.name] = input;
                     }}/>
             <Text style={textStyles.fieldLabel}>{props.field}</Text>
             <Text>{input}</Text>
         </View>
     )
-}
-
-const setFieldInput = (field, value) => {
-    SyncStorage.set(field, value)
-    .then(() => {
-        const response = SyncStorage.get(field); // 'bar'
-        // console.log(response);
-    })
-    .catch(error => {
-        console.log(error);
-    });
 }
 
 const VoterInfoScreen = ({navigation}) => {
@@ -70,15 +66,19 @@ const VoterInfoScreen = ({navigation}) => {
                         style={textStyles.field} 
                             placeholder="1/1/2021" 
                             field="Birthday"/>
-                    <Field name="county" 
+                    <Field name="zipcode" 
                         style={textStyles.field} 
-                        placeholder="Travis" 
-                        field="County"/>
+                        placeholder="12345" 
+                        field="Zipcode"/>
                     <Text style={[textStyles.details, {fontSize: 16, marginVertical: 30}]}>and if you have the following:</Text>
-                    <Field name="dlNum" 
+                    <Field name="tdlNum" 
                         style={textStyles.field} 
                         placeholder="1234567890ABCDE" 
                         field="Driver's License #"/>
+                    <Field name="vuidNum" 
+                        style={textStyles.field} 
+                        placeholder="1234567890ABCDE" 
+                        field="Texas Voter ID #"/>
 
                     <View style={{flexDirection: 'row'}}>
                     <CheckBox
@@ -91,10 +91,19 @@ const VoterInfoScreen = ({navigation}) => {
 
                     <TouchableOpacity 
                         style={buttonStyles.red_button}
-                        onPress={() => navigation.navigate('PrintVoterInfo')}>
+                        onPress={() => navigation.navigate('RegisteredVoterApproval',
+                        {
+                            firstName: VOTER_INFO["firstName"],
+                            lastName: VOTER_INFO["lastName"],
+                            birthday: VOTER_INFO["birthday"],
+                            zipcode: VOTER_INFO["zipcode"],
+                            tdlNum: VOTER_INFO["tdlNum"],
+                            vuidNum: VOTER_INFO["vuidNum"],
+                            
+                        })
+                        }>
                         <Text style={textStyles.button}>Continue</Text>
                     </TouchableOpacity>
-
 
                 </View>
           </ScrollView>
@@ -102,18 +111,4 @@ const VoterInfoScreen = ({navigation}) => {
     )
 }
 
-const PrintVoterInfoScreen = ({navigation}) => {
-
-    return(
-        <View>
-            <Text>{SyncStorage.get('firstName')}</Text>
-            <Text>{SyncStorage.get('lastName')}</Text>
-            <Text>{SyncStorage.get('birthday')}</Text>
-            <Text>{SyncStorage.get('county')}</Text>
-            <Text>{SyncStorage.get('dlNum')}</Text>
-        </View>
-
-    );
-}
-
-export {VoterInfoScreen, PrintVoterInfoScreen};
+export {VoterInfoScreen};

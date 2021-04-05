@@ -12,12 +12,13 @@ import {WelcomeScreen} from './Welcome';
 
 // Import Registration Screens
 import {IDInstructionsScreen} from './registration/IDInstructions';
-import {VoterInfoScreen, PrintVoterInfoScreen} from './registration/VoterInfo';
+import {VoterInfoScreen} from './registration/VoterInfo';
 import {RegisteredVoterApprovalScreen} from './registration/RegisteredVoterApproval';
-import {ScanIDScreen} from './registration/ScanID';
+import {ScanIDScreen, ViewPicScreen} from './registration/ScanID';
 import {LiveSelfieScreen} from './registration/LiveSelfie';
 import {IdentityApprovalScreen} from './registration/IdentityApproval';
 import {ApprovedRegistrationScreen} from './registration/ApprovedRegistration';
+
 
 // Import Voting Screens
 import {VoteInstructionScreen} from './voting/VoteInstruction';
@@ -74,7 +75,7 @@ const App: () => React$Node = () => {
       <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen}/>
       <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen}/>
       <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen}/>
-      <Stack.Screen name="PrintVoterInfo" component={PrintVoterInfoScreen}/>
+      <Stack.Screen name="ViewPic" component={ViewPicScreen}/>
 
       {/* Voting Screens */}
       <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>

@@ -11,6 +11,39 @@ import {pageStyles, textStyles, buttonStyles, shapes} from '.././styles.js';
 import {InstructionText, CenteredInstructionText} from './../App.js';
 
 
+const RegisteredVoterApprovalScreen = ({navigation, route}) => {
+
+    const {
+        firstName,
+        lastName,
+        birthday,
+        zipcode,
+        tdlNum,
+        vuidNum
+    } = route.params;
+
+    return(
+        <SafeAreaView style={pageStyles.sectionContainer}>
+          <View>
+
+            <Text>{firstName}</Text>
+            <Text>{lastName}</Text>
+            <Text>{birthday}</Text>
+            <Text>{zipcode}</Text>
+            <Text>{tdlNum}</Text>
+            <Text>{vuidNum}</Text>
+
+              <ApprovedScreen header="registered" details="voter"/>
+                <TouchableOpacity
+                    style={buttonStyles.red_button}
+                    onPress={() => navigation.navigate('ScanID')}>
+                    <Text style={textStyles.button}>Continue</Text>
+                </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+    )
+}
+
 /* Screen for if they are a verified registered voter */
 const ApprovedScreen = (props) => {
     return (
@@ -38,19 +71,5 @@ const NotApprovedScreen = (props) => {
     );
 }
 
-const RegisteredVoterApprovalScreen = ({navigation}) => {
-    return(
-        <SafeAreaView style={pageStyles.sectionContainer}>
-          <View>
-              <ApprovedScreen header="registered" details="voter"/>
-                <TouchableOpacity
-                    style={buttonStyles.red_button}
-                    onPress={() => navigation.navigate('ScanID')}>
-                    <Text style={textStyles.button}>Continue</Text>
-                </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-    )
-}
 
 export {RegisteredVoterApprovalScreen, ApprovedScreen, NotApprovedScreen};

@@ -54,7 +54,8 @@ const textStyles = StyleSheet.create({
   header: {
     color: Colors.black,
     fontSize: 36,
-    fontFamily: 'Barlow-Bold'
+    fontFamily: 'Barlow-Bold',
+    fontWeight: 'bold'
   },
   details: {
     color: Colors.black,

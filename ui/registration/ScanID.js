@@ -9,77 +9,88 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
-  Image
+  Image,
+  Platform
 } from 'react-native';
 
 import {pageStyles, textStyles, buttonStyles} from '.././styles.js';
 import {InstructionText} from './../App.js';
 import { RNCamera } from 'react-native-camera';
 
+var ios = Platform.OS === 'ios';
+
 const ScanIDScreen = ({navigation}) => {
 
   const cameraRef = useRef(null);
-  const [uri, setUri] = useState('');
+  const [uri, setUri] = useState('initial');
+  const [nextPage, setNextPage] = useState(false);
 
   const takePicture = async () => {
-      const options = { quality: 0.5, base64: true };
+      const options = { quality: 0.5, base64: true }; 
       const data = await cameraRef.current.takePictureAsync(options);
-      console.log("just took: " + uri);
-  
+      const data_uri = await data.uri;
+      await setUri(data_uri);
+      console.log("1 just took:" + data_uri);
+
   }
 
     return(
-          <View style={styles.camera_container}>
+    <View style={styles.camera_container}>
 
-            <View style={[styles.main_container, {paddingTop: 32, paddingBottom: '30%',}]}>
-              <InstructionText
-                header="scan"
-                details="your driver's license"
-              />
-            </View>
-   
-            <RNCamera 
-            //   ref={ref => {
-            //     this.camera = ref;
-            // }}
-            ref={cameraRef}
-            defaultTouchToFocus
-            mirrorImage={false}
-            style={{flex: 1}}
-            captureAudio={false}
-            style={styles.preview}
-            />
+      <View style={[styles.main_container, {paddingTop: 32, paddingBottom: ios ? '10%':'30%',}]}>
+        <InstructionText
+          header="scan"
+          details="your driver's license"
+        />
+      </View>
 
-          <View style={[styles.main_container, {paddingBottom: '10%',}]}>
-            <TouchableOpacity 
-                style={buttonStyles.red_button}
-                // onPress={() => navigation.navigate('LiveSelfie')}
-                onPress={() => {
-                  
-                  takePicture(cameraRef);
-                  console.log('in uri: ' + uri);
-                  navigation.navigate('ViewPic', {
-                    uri: uri,
-                  })
-                  
-                }}
-                >
-                <Text style={textStyles.button}>Scan</Text>
-              </TouchableOpacity>
-          </View>
+      <RNCamera 
+      ref={cameraRef}
+      defaultTouchToFocus
+      mirrorImage={false}
+      style={{flex: 1}}
+      captureAudio={false}
+      style={styles.preview}
+      onPictureTaken={() => navigation.navigate('ViewPic', {
+              uri: uri,
+              nextPage: 'LiveSelfie',
+            })}
+      />
 
-          </View>
+      <View style={[styles.main_container, {paddingBottom: '10%',}]}>
+        <TouchableOpacity 
+            style={buttonStyles.red_button}
+            onPress={() => {
+              takePicture()
+              console.log('2 in uri: ' + uri);                 
+            }}
+            >
+            <Text style={textStyles.button}>Scan</Text>
+          </TouchableOpacity>
+      </View>
+
+    </View>
     )
 }
 
 const ViewPicScreen = ({navigation, route}) => {
 
-  const {uri} = route.params;
+  const {uri, nextPage} = route.params;
+  console.log("3 showing: " + uri);
+  console.log(nextPage);
 
   return(
     <View style={{flex:1,justifyContent: 'center', alignItems: 'center'}}>          
             <Image source={{uri: uri}}
-            style={{width: 200, height: 200}}/>
+            style={{width: '100%', height: 500}}/>
+            <TouchableOpacity style={buttonStyles.red_button}
+              onPress={() => {
+                navigation.navigate(nextPage, {
+                  nextPage: 'ViewPic'
+                })
+              }}>
+              <Text style={[textStyles.button, {paddingVertical: 10, paddingHorizontal: 30}]}>Looks good</Text>
+            </TouchableOpacity>
     </View>
   );
 }

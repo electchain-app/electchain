@@ -34,10 +34,10 @@ const WelcomeScreen = ({navigation}) => {
 
   return (
       <SafeAreaView >
-        {
+          <StatusBar hidden={true} />
           <View>
             <View>
-              <Image source={require('./assets/images/welcome-screen.png')} style={{marginTop: -100, width: 400, height: 500}}/>
+              <Image source={require('./assets/images/welcome-screen.png')} style={{marginTop: -70, width: '100%', height: 500}}/>
             </View>
             <View style={pageStyles.sectionContainer}>
               <Text style={[textStyles.header, {textAlign:'center'}]}>elect</Text>
@@ -58,7 +58,7 @@ const WelcomeScreen = ({navigation}) => {
             </View>
           </View>
 
-        }
+    
       </SafeAreaView>
   );
 };

@@ -64,18 +64,18 @@ const App: () => React$Node = () => {
   return (
   // Define all of the screens
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="Welcome">
-      <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+    <Stack.Navigator initialRouteName="Welcome" screenOptions={{cardStyle: {backgroundColor: 'white'}}}>
+      <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown: false}} />
 
       {/* Registration Screens */}
       <Stack.Screen name="IDInstructions" component={IDInstructionsScreen}/>
       <Stack.Screen name="VoterInfo" component={VoterInfoScreen}/>
       <Stack.Screen name="RegisteredVoterApproval" component={RegisteredVoterApprovalScreen}/>
-      <Stack.Screen name="ScanID" component={ScanIDScreen}/>
+      <Stack.Screen name="ScanID" component={ScanIDScreen} />
       <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen}/>
       <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen}/>
       <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen}/>
-      <Stack.Screen name="ViewPic" component={ViewPicScreen}/>
+      <Stack.Screen name="ViewPic" component={ViewPicScreen} options={{headerTitle: 'Retake picture'}}/>
 
       {/* Voting Screens */}
       <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>

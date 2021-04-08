@@ -47,7 +47,7 @@ const VoterInfoScreen = ({navigation}) => {
     var certify = false;
 
     return(
-        <SafeAreaView style={pageStyles.sectionContainer}>
+        <View style={pageStyles.sectionContainer}>
             <ScrollView>
                 <View style={{marginBottom: 50}}>
                     <InstructionText header="enter"
@@ -107,7 +107,7 @@ const VoterInfoScreen = ({navigation}) => {
 
                 </View>
           </ScrollView>
-        </SafeAreaView>
+        </View>
     )
 }
 

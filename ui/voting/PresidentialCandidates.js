@@ -14,9 +14,10 @@ export default class PresidentialCandidateScreen extends Component {
         super(props);
         this.state = {
             presidentialCandidates: [
-                {name: 'Biden'},
-                {name: 'Trump'},
-                {name: 'Tej Anand'}
+                {name: 'Joe Biden (D)'},
+                {name: 'Donald Trump (R)'},
+                {name: 'Howie Hawkins (G)'},
+                {name: 'Jo Jorgensen (L)'}
             ],
             candidateSelected: false
         };

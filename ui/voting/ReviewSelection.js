@@ -43,7 +43,7 @@ const ReviewSelectionScreen = ({navigation}) => {
 const sendToBlockchain = () => {
     console.log('Enter sendBlockChain');
     console.log('President Choice: ' + SyncStorage.get('presidentChoice'));
-    console.log('President Choice: ' + SyncStorage.get('senatorChoice'));
+    console.log('Senate Choice: ' + SyncStorage.get('senatorChoice'));
 }
 
 export {ReviewSelectionScreen};

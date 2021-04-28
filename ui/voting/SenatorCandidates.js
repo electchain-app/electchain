@@ -14,9 +14,11 @@ export default class SenatorCandidateScreen extends Component {
         super(props);
         this.state = {
             senatorCandidates: [
-                {name: 'Ted Cruz'},
-                {name: "Beto O'Rourke"},
-                {name: 'Dr. D'}
+                {name: 'John Cornyn (R)'},
+                {name: 'M.J. Hegar (D)'},
+                {name: 'David B. Collins (G)'},
+                {name: 'Kerry McKennon (L)'},
+                {name: 'Ricardo Turullols-Bonilla (I)'}
             ],
             candidateSelected: false
         };

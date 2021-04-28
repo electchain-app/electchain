@@ -43,8 +43,8 @@ const Field = (props) => {
 
 const VoterInfoScreen = ({navigation}) => {
 
-    const [toggleCheckBox, setToggleCheckBox] = useState(false)
-    var certify = false;
+    const [toggleCheckBox, setToggleCheckBox] = useState('')
+    const certifyText = "I ceritfy all of this information\n is not falsified";
 
     return(
         <View style={pageStyles.sectionContainer}>
@@ -75,18 +75,18 @@ const VoterInfoScreen = ({navigation}) => {
                         style={textStyles.field} 
                         placeholder="1234567890ABCDE" 
                         field="Driver's License #"/>
-                    <Field name="vuidNum" 
+                    {/* <Field name="vuidNum" 
                         style={textStyles.field} 
                         placeholder="1234567890ABCDE" 
-                        field="Texas Voter ID #"/>
+                        field="Texas Voter ID #"/> */}
 
                     <View style={{flexDirection: 'row'}}>
                     <CheckBox
                         disabled={false}
                         value={toggleCheckBox}
-                        onValueChange={(value) => setToggleCheckBox(certify)}
+                        onValueChange={(value) => setToggleCheckBox(!toggleCheckBox)}
                     />
-                    <Text style={textStyles.checkbox}>I ceritfy all of this information is not falsified</Text>
+                    <Text style={textStyles.checkbox}>{certifyText}</Text>
                     </View>
 
                     <TouchableOpacity 
@@ -98,7 +98,8 @@ const VoterInfoScreen = ({navigation}) => {
                             birthday: VOTER_INFO["birthday"],
                             zipcode: VOTER_INFO["zipcode"],
                             tdlNum: VOTER_INFO["tdlNum"],
-                            vuidNum: VOTER_INFO["vuidNum"],
+                            certify: toggleCheckBox,
+                            // vuidNum: VOTER_INFO["vuidNum"],
                             
                         })
                         }>

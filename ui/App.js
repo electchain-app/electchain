@@ -68,14 +68,14 @@ const App: () => React$Node = () => {
       <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown: false}} />
 
       {/* Registration Screens */}
-      <Stack.Screen name="IDInstructions" component={IDInstructionsScreen}/>
-      <Stack.Screen name="VoterInfo" component={VoterInfoScreen}/>
-      <Stack.Screen name="RegisteredVoterApproval" component={RegisteredVoterApprovalScreen}/>
-      <Stack.Screen name="ScanID" component={ScanIDScreen} />
-      <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen}/>
-      <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen}/>
-      <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen}/>
-      <Stack.Screen name="ViewPic" component={ViewPicScreen} options={{headerTitle: 'Retake picture'}}/>
+      <Stack.Screen name="IDInstructions" component={IDInstructionsScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="VoterInfo" component={VoterInfoScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="RegisteredVoterApproval" component={RegisteredVoterApprovalScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="ScanID" component={ScanIDScreen} options={{headerShown: false}} />
+      <Stack.Screen name="LiveSelfie" component={LiveSelfieScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="IdentityApproval" component={IdentityApprovalScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="ApprovedRegistration" component={ApprovedRegistrationScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="ViewPic" component={ViewPicScreen} options={{headerTitle: 'Retake picture'}} options={{headerShown: false}}/>
 
       {/* Voting Screens */}
       <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>

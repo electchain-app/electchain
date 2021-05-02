@@ -50,15 +50,15 @@ const WelcomeScreen = ({navigation}) => {
               </TouchableOpacity>
 
               {/* TODO: temp for skipping registration screens */}
-              <TouchableOpacity
-                  style={buttonStyles.red_button}
-                  onPress={() => navigation.navigate('VoteInstruction')}>
-                <Text style={textStyles.button}>Skip to Vote Screens</Text>
-              </TouchableOpacity>
+              {/*<TouchableOpacity*/}
+              {/*    style={buttonStyles.red_button}*/}
+              {/*    onPress={() => navigation.navigate('VoteInstruction')}>*/}
+              {/*  <Text style={textStyles.button}>Skip to Vote Screens</Text>*/}
+              {/*</TouchableOpacity>*/}
             </View>
           </View>
 
-    
+
       </SafeAreaView>
   );
 };

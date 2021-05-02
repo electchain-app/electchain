@@ -78,11 +78,11 @@ const App: () => React$Node = () => {
       <Stack.Screen name="ViewPic" component={ViewPicScreen} options={{headerTitle: 'Retake picture'}} options={{headerShown: false}}/>
 
       {/* Voting Screens */}
-      <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen}/>
-      <Stack.Screen name="PresidentialCandidates" component={PresidentialCandidateScreen}/>
-      <Stack.Screen name="SenatorCandidates" component={SenatorCandidateScreen}/>
-      <Stack.Screen name="ReviewSelection" component={ReviewSelectionScreen}/>
-      <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>
+      <Stack.Screen name="VoteInstruction" component={VoteInstructionScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="PresidentialCandidates" component={PresidentialCandidateScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="SenatorCandidates" component={SenatorCandidateScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="ReviewSelection" component={ReviewSelectionScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="Confirmation" component={ConfirmationScreen} options={{headerShown: false}}/>
 
     </Stack.Navigator>
   </NavigationContainer>
